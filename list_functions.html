@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap" rel="stylesheet">
+        <style>
+            code {
+                font-family: Consolas,"courier new";
+                color: black;
+                padding: 2px;
+                font-size: 105%;
+            }
+            pre {
+                background: #f4f4f4;
+                border: 1px solid #ddd;
+                border-left: 3px solid #f36d33;
+                color: #666;
+                page-break-inside: avoid;
+                font-family: Consolas,"courier new";
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 1.6em;
+                max-width: 100%;
+                overflow: auto;
+                padding: 1em 1.5em;
+                display: block;
+                word-wrap: break-word;
+            }
+            * {
+                font-family: "Noto Sans Display", sans-serif;
+            }
+            h1, h2 {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Python List Functions</h1>
+        <hr>
+
+        <p>
+            Overview:<br>
+            <ol>
+                <li><a href="#len">len()</a></li>
+                <li><a href="#maxmin">max() and min()</a></li>
+                <li><a href="#index">index()</a></li>
+                <li><a href="#insert">insert()</a></li>
+            </ol>
+        </p>
+        <hr>
+        <h2 id='len'>len()</h2>
+        <p>
+            The len() function is a built-in Python function that returns the length of a given object(list, dictionary, tuple, string) specified in the argument between the parentheses. The syntax for len() is <code>len(list_name)</code>. len() returns an integer value, so you can assign it to a variable and/or manipulate it. 
+        </p>
+        <br>
+        <p>Example for len():</p>
+<pre><code>lst = ['spam', 'eggs', 'bacon'] # Defining the list
+list_length = len(lst) # Storing the value len(lst) returns in a variable
+print(list_length) # Outputting the value of the variable containing the list's length
+
+Output:
+>>>3
+</code></pre>
+        <p>In the first line, we defined a list containing the elements 'spam', 'eggs', and 'bacon'. In the second line, we stored the value that the len() function returned in a variable called list_length. In the last line, we printed the variable list_length, which contained the length of the list. If there's any confusion, even though Python's indexing system starts at zero and the last index in the list is index 2, len() will still return 3. There's no correlation.</p>
+        <hr>
+        <h2 id='maxmin'>max() and min()</h2> 
+        <p>
+            The max() and min() are both functions that can be used to find the minimum and maximum number in Python lists. They can be used in many other situations, but this is focusing on lists. The syntax for both max() and min() are realitively similar, and almost identical to len(). The syntax for max() is <code>max(list_name)</code>, and the syntax for min() is <code>min(list_name)</code>. max() and min() both return values, and like len() these can be manipulated and assigned to variables.
+        </p>
+        <br>
+        <p>Example for min() and max():</p>
+<pre><code>lst = [1, 2, 3] # Defining the list
+lst_min = min(lst) # Assigning the value of min() to a variable
+lst_max = max(lst) # Assigning the value of max() to a variable
+print(lst_min) # Printing the variable containing the min() of lst
+print(lst_max) # Printing the variable containing the max() of lst
+
+Output:
+>>>1
+>>>3
+</code></pre>
+        <p>In the first line, we defined a list containing 3 integers(1,2, and 3). Next, we used line 3 and 4 to assign the values of min() and max() respectively. In the last lines we printed the values that we recieved from the functions, and recived the output containing the greatest and least numerical values in the list. </p>
+        <hr>
+        <h2 id='index'>index()</h2>
+        <p>The index() function is used to return the index of a provided value. The syntax for index() is different from min(), max(), and len() because index() is a method of Python's built-in list class. The syntax for index is <code>list_name.index(value)</code>, where <code>value</code> is the value you want to locate in the list. index() returns an integer value, so you can print, assign, and manipulate the value directly from the function call.</p>
+        <br>
+        <p>Example for index():</p>
+<pre><code>lst = ['spam', 'eggs', 'bacon'] # Defining the list
+eggs_index = lst.index('eggs') # Getting the index of value 'eggs' from list lst
+print(eggs_index) # Printing the variable containing the index
+print(lst[eggs_index]) # Printing the value at the index we got from the function
+
+Output:
+>>>1
+>>>eggs
+</code></pre>
+        <p>Like usual, we defined a list in line one. The second line we used to demonstrate usage of the function, by storing the return value of a function call of index() inside of a variable named eggs_index. The last two lines were to show what values we get, and that it is indeed correct. Unlike len(), the index() function and Python's index system are indeed correlated. If the value is the second element, the function would return the value 1, because it is at index 1.</p>
+        <hr>
+        <h2 id="insert">insert()</h2>
+        <p>
+            Unlike all the other functions, insert() takes two arguments. One for the index you want to insert the value, and the other one is the value. The insert() function inserts a value into a list at a provided value, pushing all the elements after it(including the one at the specified index) one space to make room for the new value. The syntac for index() is <code>list_name.insert(ind, value)</code> where ind is the index you want to insert it at, and value is the value you want to insert. insert() does not return a value.
+        </p>
+        <br>
+        <p>Example for insert():</p>
+<pre><code>lst = ['spam', 'bacon'] # Defining a list
+print(lst) # Print the list BEFORE modification
+lst.insert(1, 'eggs') # Using the insert() function to insert 'eggs' at index 1
+print(lst) # Printing the list AFTER modification
+
+Output:
+>>>['spam', 'bacon']
+>>>['spam', 'eggs', 'bacon']
+</code></pre>
+        <p>In lines 1 and 2 we defined the list, and then printed the pre-modified list. In lines 3 and 4, we used the insert() function and printed out the list after modification. As you can see, the value 'bacon' was moved back from index 1 to index 2, to make room for 'eggs' which pushed its way into index 1. You can think of the insert() function as a person(the value) cutting in the line(the list), effectively pushing everyone behind them back a spot.</p>
+    </body>
+</html>
